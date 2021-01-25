@@ -2,8 +2,11 @@ const express = require("express");
 const bodyParser = require("body-Parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const postRoutes = require("./routes/post");
 
 const app = express();
+
+app.use("/posts", postRoutes);
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
