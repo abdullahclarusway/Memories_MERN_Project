@@ -1,10 +1,14 @@
 const express = require("express");
-const getPosts = require("../controllers/posts");
-const createPost = require("../controllers/posts");
-
+// const posts = require("../controllers/posts");
 const router = express.Router();
+// const Posts = require("../controllers/Posts");
+const Posts = require("../Controllers/Posts");
 
-router.get("/", getPosts);
-router.post("/", createPost);
+// router.get("/", posts.getPosts);
+// router.post("/", posts.createPost);
+// router.get("/", Posts.hasan);
+router.get("/", Posts.getPosts);
+router.post("/", Posts.createPost);
+router.patch("/:id", Posts.updatePost);
 
 module.exports = router;
