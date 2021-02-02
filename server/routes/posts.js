@@ -1,14 +1,14 @@
 const express = require("express");
-// const posts = require("../controllers/posts");
+
 const router = express.Router();
-// const Posts = require("../controllers/Posts");
+
 const Posts = require("../Controllers/Posts");
 
-// router.get("/", posts.getPosts);
-// router.post("/", posts.createPost);
-// router.get("/", Posts.hasan);
 router.get("/", Posts.getPosts);
 router.post("/", Posts.createPost);
+router.get("/:id", Posts.getPost);
 router.patch("/:id", Posts.updatePost);
+router.delete("/:id", Posts.deletePost);
+router.patch("/:id/likePost", Posts.likePost);
 
 module.exports = router;
