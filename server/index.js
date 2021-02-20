@@ -12,10 +12,11 @@ app.use(cors());
 
 app.use("/posts", postRoutes);
 
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
+const CONNECTION_URL =  "mongodb+srv://abdullahb:1234Qwer...@cluster0.i6ive.mongodb.net/<dbname>?retryWrites=true&w=majority"
 
 mongoose
-  .connect(process.env.CONNECTION_URL, {
+  .connect(CONNECTION_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
